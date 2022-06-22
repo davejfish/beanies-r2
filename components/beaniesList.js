@@ -8,7 +8,7 @@ export default function createBeaniesList(root) {
         
             const a = document.createElement('a');
             a.classList.add('card');
-            a.href = `detail/?id=${beanie.id}`;
+            a.href = `./detail/?id=${beanie.id}`;
 
             const img = document.createElement('img');
             img.src = beanie.image;

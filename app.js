@@ -18,6 +18,7 @@ const beaniesList = createBeaniesList(document.querySelector('.beanies-list'));
 function display() {
     // Call each component passing in props that are the pieces of state this component needs
     beaniesList({ beanies: state.beanies });
+    
 }
 
 // Call display on page load

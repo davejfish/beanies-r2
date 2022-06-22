@@ -10,8 +10,8 @@ export default function createBeanieDetail(root) {
         birthday.textContent = `birthday: ${beanie.birthday}`;
         releaseDate.textContent = `released on: ${beanie.releaseDate}`;
         
-        if (starSign) {
-            starSign.textContent = `release year: ${beanie.releaseYear}`;
+        if (beanie.astroSign) {
+            starSign.textContent = `star sign: ${beanie.astroSign}`;
         }
         else {
             starSign.innerHTML = '';

@@ -14,6 +14,15 @@ main {
     background-size: cover;
 }
 
+.fixed {
+    display: flex;
+    background-attachment: fixed;
+    justify-content: center;
+    color: white;
+    font-size: 5rem;
+    padding-top: 300px;
+}
+
 .divide {
     background-color: #C4CBCA;
     height: 50px;
