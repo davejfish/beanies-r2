@@ -13,3 +13,13 @@ export async function getBeanies() {
 
     return response.data;
 }
+
+export async function getBeanie(id) {
+    const response = await client
+        .from('beanie_babies')
+        .select('*')
+        .match({ id: id })
+        .single();
+    
+    return response.data;
+}

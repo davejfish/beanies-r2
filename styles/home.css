@@ -7,7 +7,7 @@ main {
 .parallax {
     background-image: url('../assets/bb.jfif');
     min-width: 100%;
-    min-height: 800px;
+    min-height: 900px;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -34,15 +34,27 @@ main {
     background-color: #EE4266;
     border: solid 3px #C4CBCA;
     border-radius: 8px;
+    
     display: grid;
     grid-template-rows: 75% 25%;
     margin: 15px;
-    text-align: center;
+    min-height: 300px;
+    
     justify-content: center;
+    justify-items: center;
+
+    text-align: center;
+    overflow: hidden;
+    text-overflow: "-";
+}
+
+.card:hover {
+    background-color: #3CBBB1;
+    overflow: visible;
 }
 
 .card img {
-    width: 80px;
+    width: 150px;
     height: 100%;
     object-fit: cover;
 }

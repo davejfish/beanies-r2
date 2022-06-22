@@ -1,0 +1,39 @@
+.background {
+    background-image: url('../assets/bb.jfif');
+    min-width: 100%;
+    min-height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+}
+
+.img-name {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 2rem;
+    color: white;
+    align-items: center;
+}
+
+.img-name img {
+    width: 500px;
+    border: solid 3px white;
+}
+
+.bb-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 3rem;
+    color: black;
+    margin: 15px;
+    background-color: #3CBBB1;
+    height: fit-content;
+    padding: 10px;
+}
