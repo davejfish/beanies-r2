@@ -12,33 +12,43 @@
         href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600&family=Titillium+Web:wght@200;400;600&display=swap">
     <link rel="stylesheet" href="/styles/reset.css" />
     <link rel="stylesheet" href="/styles/main.css" />
-    <link rel="stylesheet" href="/styles/home.css" />
+    <link rel="stylesheet" href="/styles/detail.css" />
     <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
     <title>Web MVC UI</title>
 </head>
 
 <body>
     <header>
-        <img src="/assets/html_css_js.png">
+        <a href="../index.html">
+            <img src="/assets/html_css_js.png">
+        </a>
         <h1>Web MVC UI</h1>
     </header>
 
-    <main>
-        <section class="parallax">
-            <h2 class="fixed">beanie babies!</h2>
+    <main class="background">
+        <section class="img-name">
+            <h2 id="name">name</h2>
+            <img id="bb-image">
         </section>
-        <section class="divide"></section>
-        
-        <section class="blue">
-            <ul class="beanies-list">
-                <li><a class="card" href="https://google.com"><img src='./assets/ningyou.png'><h2>name</h2> </a></li>
-            </ul>
+        <section class="bb-details">
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p>star sign: -</p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <span>check out more <a id="link">here</a></span>
         </section>
     </main>
 
     <footer>&copy;2022 Aspiring Software Developer</footer>
 
-    <script type="module" src="app.js"></script>
+    <script type="module" src="./detials.js"></script>
 </body>
 
 </html>

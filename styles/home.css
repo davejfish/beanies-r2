@@ -1,1 +1,69 @@
 /* CSS for home page (index.html) */
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+.parallax {
+    background-image: url('../assets/bb.jfif');
+    min-width: 100%;
+    min-height: 900px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.fixed {
+    display: flex;
+    background-attachment: fixed;
+    justify-content: center;
+    color: white;
+    font-size: 5rem;
+    padding-top: 300px;
+}
+
+.divide {
+    background-color: #C4CBCA;
+    height: 50px;
+    width: 100%;
+}
+
+.beanies-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.blue {
+    background-color: #2A1E5C;
+}
+
+.card {
+    background-color: #EE4266;
+    border: solid 3px #C4CBCA;
+    border-radius: 8px;
+    
+    display: grid;
+    grid-template-rows: 75% 25%;
+    margin: 15px;
+    min-height: 300px;
+    
+    justify-content: center;
+    justify-items: center;
+
+    text-align: center;
+    overflow: hidden;
+    text-overflow: "-";
+}
+
+.card:hover {
+    background-color: #3CBBB1;
+    overflow: visible;
+}
+
+.card img {
+    width: 150px;
+    height: 100%;
+    object-fit: cover;
+}
