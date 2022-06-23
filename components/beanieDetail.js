@@ -1,6 +1,7 @@
 export default function createBeanieDetail(root) {
     const title = document.querySelector('#name');
     const img = document.querySelector('#bb-image');
+    const BPLink = document.querySelector('#link');
     const [theme, birthday, releaseDate, starSign] = root.querySelectorAll('p');
 
     return ({ beanie }) => {
@@ -16,5 +17,6 @@ export default function createBeanieDetail(root) {
         else {
             starSign.innerHTML = '';
         }
+        BPLink.href = beanie.link;
     };
 }
