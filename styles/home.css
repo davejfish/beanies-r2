@@ -7,7 +7,7 @@ main {
 .parallax {
     background-image: url('../assets/bb.jfif');
     min-width: 100%;
-    min-height: 900px;
+    min-height: 400px;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -20,7 +20,7 @@ main {
     justify-content: center;
     color: white;
     font-size: 5rem;
-    padding-top: 300px;
+    padding-top: 100px;
 }
 
 .divide {
