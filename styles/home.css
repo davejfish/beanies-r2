@@ -4,10 +4,14 @@ main {
     flex-direction: column;
 }
 
+ul {
+    margin-bottom: 50px;
+}
+
 .parallax {
     background-image: url('../assets/bb.jfif');
     min-width: 100%;
-    min-height: 900px;
+    min-height: 400px;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -20,7 +24,7 @@ main {
     justify-content: center;
     color: white;
     font-size: 5rem;
-    padding-top: 300px;
+    padding-top: 100px;
 }
 
 .divide {
@@ -33,6 +37,7 @@ main {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 15px;
+    justify-content: space-evenly;
 }
 
 .blue {
@@ -66,4 +71,69 @@ main {
     width: 150px;
     height: 100%;
     object-fit: cover;
+}
+
+button {
+    border-radius: 8px;
+    font-size: 1.3rem;
+}
+
+#search {
+    display: flex;
+    justify-content: space-between;
+    background-color: #C4CBCA;
+}
+
+.search {
+    display: flex;
+    background-color: #3CBBB1;
+    height: 100px;
+    width: 700px;
+    align-items: center;
+    border: solid 3px #EE4266;
+    border-radius: 8px;
+    padding: 20px;
+    margin-left: 15px;
+}
+
+.search button {
+    height: fit-content;
+    margin-left: 30px;
+}
+
+.search select {
+    height: 25px;
+    width: 100px;
+}
+
+.controls {
+    display: flex;
+    background-color: #3CBBB1;
+    height: 100px;
+    width: 500px;
+    justify-content: center;
+    align-items: center;
+    border: solid 3px #EE4266;
+    border-radius: 8px;
+    padding: 20px;
+    margin-right: 15px;
+}
+
+.controls button {
+    height: fit-content;
+    margin: 20px;
+}
+
+.controls span {
+    width: 110px;
+    text-align: center;
+}
+
+.controls select {
+    height: 25px;
+    width: 100px;
+}
+
+.release-year {
+    width: 175px;
 }

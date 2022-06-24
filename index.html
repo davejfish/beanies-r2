@@ -28,7 +28,54 @@
             <h2 class="fixed">beanie babies!</h2>
         </section>
         <section class="divide"></section>
-        
+        <section id="search">
+            <form class="search">
+                <label>
+                    name:
+                    <input name="name">
+                </label>
+                <label>
+                    star-sign:
+                    <select name="star-sign">
+                        <option value="">-</option>
+                        <option value="aries">Aries</option>
+                        <option value="taurus">Taurus</option>
+                        <option value="gemini">Gemini</option>
+                        <option value="cancer">Cancer</option>
+                        <option value="leo">Leo</option>
+                        <option value="virgo">Virgo</option>
+                        <option value="libra">Libra</option>
+                        <option value="scorpio">Scorpio</option>
+                        <option value="sagittarius">Sagittarius</option>
+                        <option value="capricorn">Capricorn</option>
+                        <option value="aquarius">Aquarius</option>
+                        <option value="pisces">Pisces</option>
+                    </select>
+                </label>
+                <label class="release-year">
+                    released from year:
+                    <input id="release-year" name="from">
+                    to:
+                    <input id="release-year" name="to">
+                </label>
+                <button>submit</button>
+            </form>
+            
+            <div class="controls">
+                <label>
+                    items:
+                    <select>
+                        <option value="10">10</option>
+                        <option value="25">25</option>
+                        <option value="50">50</option>
+                    </select>
+                </label>
+                <button>prev</button>
+                <span>page x of y</span>
+                <button>next</button>
+            </div>
+            
+        </section>
         <section class="blue">
             <ul class="beanies-list">
                 <li><a class="card" href="https://google.com"><img src='./assets/ningyou.png'><h2>name</h2> </a></li>
