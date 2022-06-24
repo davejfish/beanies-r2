@@ -7,7 +7,18 @@ import createFilter from './components/filter.js';
 import state from './state.js';
 // write handler functions
 async function handlePageLoad() {
-    state.beanies = await getBeanies();
+    const params = new URLSearchParams(window.location.search);
+    state.name = params.get('state.name') || '';
+    state.starSign = params.get('state.starSign') || '';
+
+    state.page = Number(params.get('state.page')) || 1;
+
+    const start = (state.page - 1) * state.pageSize;
+    const end = (state.page * state.pageSize) - 1;
+
+    const response = await getBeanies(state.name, state.starSign, { start, end });
+    state.beanies = response.data;
+    state.totalPages = Math.ceil(response.count / state.pageSize);
     display();
 }
 
@@ -17,8 +28,6 @@ function handleFilter(data) {
     params.set('state.name', data.name);
     params.set('state.starSign', data.starSign);
     params.set('state.page', 1);
-
-    console.log(state.name);
 
     window.location.search = params.toString();
 }
