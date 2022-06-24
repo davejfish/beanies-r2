@@ -3,6 +3,7 @@ import { getBeanies } from './services/beaniesService.js';
 // import component creators
 import createBeaniesList from './components/beaniesList.js';
 import createFilter from './components/filter.js';
+import createPaging from './components/paging.js';
 // declare state variables
 import state from './state.js';
 // write handler functions
@@ -12,6 +13,7 @@ async function handlePageLoad() {
     state.starSign = params.get('state.starSign') || '';
 
     state.page = Number(params.get('state.page')) || 1;
+    state.pageSize = Number(params.get('state.pageSize')) || 10;
 
     const start = (state.page - 1) * state.pageSize;
     const end = (state.page * state.pageSize) - 1;
@@ -31,16 +33,29 @@ function handleFilter(data) {
 
     window.location.search = params.toString();
 }
+
+function handlePaging(change, size) {
+    const params = new URLSearchParams(window.location.search);
+    
+    state.page = Number(size) === state.pageSize ? Math.max(1, state.page + change) : 1;
+    
+
+    params.set('state.page', state.page);
+    params.set('state.pageSize', size);
+    window.location.search = params.toString();
+}
 // Create each component: 
 // - pass in the root element via querySelector
 // - pass any needed handler functions as properties of an actions object 
 const beaniesList = createBeaniesList(document.querySelector('.beanies-list'));
 const filter = createFilter(document.querySelector('form'), { handleFilter });
+const paging = createPaging(document.querySelector('.controls'), { handlePaging });
 
 // Roll-up display function that renders (calls with state) each component
 function display() {
     // Call each component passing in props that are the pieces of state this component needs
     filter({ name: state.name, starSign: state.starSign });
+    paging({ page: state.page, pageSize: state.pageSize, totalPages: state.totalPages });
     beaniesList({ beanies: state.beanies });
     
 }
