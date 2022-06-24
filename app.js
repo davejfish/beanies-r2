@@ -9,16 +9,18 @@ import state from './state.js';
 // write handler functions
 async function handlePageLoad() {
     const params = new URLSearchParams(window.location.search);
-    state.name = params.get('state.name') || '';
-    state.starSign = params.get('state.starSign') || '';
+    state.name = params.get('name') || '';
+    state.starSign = params.get('starSign') || '';
+    state.yearStart = params.get('yearStart') || '';
+    state.yearEnd = params.get('yearEnd') || '';
 
-    state.page = Number(params.get('state.page')) || 1;
-    state.pageSize = Number(params.get('state.pageSize')) || 10;
+    state.page = Number(params.get('page')) || 1;
+    state.pageSize = Number(params.get('pageSize')) || 10;
 
     const start = (state.page - 1) * state.pageSize;
     const end = (state.page * state.pageSize) - 1;
 
-    const response = await getBeanies(state.name, state.starSign, { start, end });
+    const response = await getBeanies(state.name, state.starSign, state.yearStart, state.yearEnd, { start, end });
     state.beanies = response.data;
     state.totalPages = Math.ceil(response.count / state.pageSize);
     display();
@@ -26,10 +28,11 @@ async function handlePageLoad() {
 
 function handleFilter(data) {
     const params = new URLSearchParams(window.location.search);
-
-    params.set('state.name', data.name);
-    params.set('state.starSign', data.starSign);
-    params.set('state.page', 1);
+    params.set('name', data.name);
+    params.set('starSign', data.starSign);
+    params.set('yearStart', data.yearStart);
+    params.set('yearEnd', data.yearEnd);
+    params.set('page', 1);
 
     window.location.search = params.toString();
 }
@@ -40,8 +43,8 @@ function handlePaging(change, size) {
     state.page = Number(size) === state.pageSize ? Math.max(1, state.page + change) : 1;
     
 
-    params.set('state.page', state.page);
-    params.set('state.pageSize', size);
+    params.set('page', state.page);
+    params.set('pageSize', size);
     window.location.search = params.toString();
 }
 // Create each component: 
@@ -54,7 +57,7 @@ const paging = createPaging(document.querySelector('.controls'), { handlePaging 
 // Roll-up display function that renders (calls with state) each component
 function display() {
     // Call each component passing in props that are the pieces of state this component needs
-    filter({ name: state.name, starSign: state.starSign });
+    filter({ name: state.name, starSign: state.starSign, yearStart: state.yearStart, yearEnd: state.yearEnd });
     paging({ page: state.page, pageSize: state.pageSize, totalPages: state.totalPages });
     beaniesList({ beanies: state.beanies });
     

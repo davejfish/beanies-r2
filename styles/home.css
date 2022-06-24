@@ -88,7 +88,7 @@ button {
     display: flex;
     background-color: #3CBBB1;
     height: 100px;
-    width: 500px;
+    width: 700px;
     align-items: center;
     border: solid 3px #EE4266;
     border-radius: 8px;
@@ -98,6 +98,7 @@ button {
 
 .search button {
     height: fit-content;
+    margin-left: 30px;
 }
 
 .search select {
@@ -131,4 +132,8 @@ button {
 .controls select {
     height: 25px;
     width: 100px;
+}
+
+.release-year {
+    width: 175px;
 }
